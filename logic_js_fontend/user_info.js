@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         avatar_img_ = message.avatar_img
         birthday_ = message.birthday
         email_ = message.email
-        password_ = message.password
+        // password_ = message.password
         createdTime_ = message.createdTime
 
 
@@ -65,8 +65,8 @@ document.addEventListener('DOMContentLoaded', async function() {
             <div id="email_text"><h3>User Email : ${email_}</h3></div>
             <div class="information__small-container"><h3>User Name :</h3><input type="text" id="username_text"></div>
             <div class="information__small-container"><h3>Date of Birth :</h3><input type="date" name="dateInput" id="birthday_text"></div>
-            <div class="information__small-container"><h3>User Password :</h3><input type="password" id="password_text"></div>
-            <label for="showPassword"><input type="checkbox" id="showPassword">Show Password</label>
+            <!-- <div class="information__small-container"><h3>User Password :</h3><input type="password" id="password_text"></div> -->
+            <!-- <label for="showPassword"><input type="checkbox" id="showPassword">Show Password</label> -->
 
             <div id="created_time_text"><h3>Time of account creation :${createdTime_}</h3></div>
             <div id="submit_button"><input type="button"  class="summit__btn-css" value="Submit"></div>
@@ -78,18 +78,18 @@ document.addEventListener('DOMContentLoaded', async function() {
         username_text.value = username_;
         let birthday_text = document.querySelector("#birthday_text");
         birthday_text.value = birthday_;
-        let password_text = document.querySelector("#password_text");
-        password_text.value = password_;
-        let showPasswordCheckbox = document.querySelector('#showPassword');
-        showPasswordCheckbox.addEventListener("click", function() {
-          if (password_text.type === "password") {
-            password_text.type = 'text';
-            // alert("abc")
-            // console.log("abc")
-          } else {
-            password_text.type = 'password';
-          }
-      });
+        // let password_text = document.querySelector("#password_text");
+        // password_text.value = password_;
+      //   let showPasswordCheckbox = document.querySelector('#showPassword');
+      //   showPasswordCheckbox.addEventListener("click", function() {
+      //     if (password_text.type === "password") {
+      //       password_text.type = 'text';
+      //       // alert("abc")
+      //       // console.log("abc")
+      //     } else {
+      //       password_text.type = 'password';
+      //     }
+      // });
 
       // submit btn
       let submit_button = document.querySelector("#submit_button");
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         // alert("check ok")
         let username_text = document.querySelector("#username_text");
         let birthday_text = document.querySelector("#birthday_text");
-        let password_text = document.querySelector("#password_text");
+        // let password_text = document.querySelector("#password_text");
         let img_avata_show = document.querySelector("#img_avata_show")
         let error_edit_user = document.querySelector("#error_edit_user")
 
@@ -132,14 +132,14 @@ document.addEventListener('DOMContentLoaded', async function() {
           //   return
           // }
         }
-        if(password_text.value != password_){
-          console.log("pass change")
-          console.log(`password = ${password_text.value}`)
-          if (password_text.value.length < 6 || !/\d/.test(password_text.value) || !/[a-zA-Z]/.test(password_text.value)) {
-            error_edit_user.innerText = 'Mật khẩu phải có ít nhất 6 ký tự và bao gồm cả chữ và số.';
-            return;
-          }
-        }
+        // if(password_text.value != password_){
+        //   console.log("pass change")
+        //   console.log(`password = ${password_text.value}`)
+        //   if (password_text.value.length < 6 || !/\d/.test(password_text.value) || !/[a-zA-Z]/.test(password_text.value)) {
+        //     error_edit_user.innerText = 'Mật khẩu phải có ít nhất 6 ký tự và bao gồm cả chữ và số.';
+        //     return;
+        //   }
+        // }
         if(img_avata_show.src != avatar_img_){
           console.log("avata change")
           console.log(`${img_avata_show.src} vs ${avatar_img_}`)
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         data3 = {
           email:login_email,
           username:username_text.value,
-          password:password_text.value,
+          // password:password_text.value,
           birthday:birthday_text.value,
           avatar_img:img_avata_show.src
         }

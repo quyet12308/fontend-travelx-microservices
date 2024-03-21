@@ -190,9 +190,12 @@ document.addEventListener('DOMContentLoaded',  function() {
         response_data3 = await send_data_to_server_booking_tour(data3)
 
         if (response_data3.status){
-            alert(response_data3.message)
+            // alert(response_data3.message)
 
-            window.location.href = "home.html"
+            // window.location.href = "home.html"
+            alert("Mời bạn thanh toán tour")
+            sessionStorage.setItem("url_payment_qrcode_img",response_data3.message.url_payment_qrcode_img)
+            window.location.href = "payment_tour_by_qrcode.html"
         }
         else{
             alert(response_data3.message)

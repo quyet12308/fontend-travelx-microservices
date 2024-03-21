@@ -35,6 +35,15 @@ document.addEventListener('DOMContentLoaded',async ()=> {
         img_list = data_response_list.message.img_tours_list
         let html_text = ""
         for (let i = 0 ; i< data_list.length;i++){
+          if(data_list[i].admin_check_payment == "0"){
+            status_payment_check = "Tour chưa được xác nhận"
+          }
+          else if (data_list[i].admin_check_payment == "1"){
+            status_payment_check = "Tour đã được xác nhận"
+          }
+          else if (data_list[i].admin_check_payment == "2"){
+            status_payment_check = "Có lỗi bất thường , vui lòng liên hệ admin để được thêm thông tin chi tiết"
+          }
             html_text += `
             <div class="tour_container">
               <img src="data:image/png;base64,${img_list[i]}" alt="">
@@ -46,6 +55,8 @@ document.addEventListener('DOMContentLoaded',async ()=> {
               <p>Tên khách sạn ${data_list[i].hotel_infor}</p>
               <p>Số người lớn ${data_list[i].number_adults}</p>
               <p>Số trẻ em ${data_list[i].number_children}</p>
+              <p>Tinh trạng thanh toán ${status_payment_check}</p>
+
               <div class="button_container">
                 <button class="edit_button">Chỉnh sửa</button>
                 <button class="delete_button" onclick="delete_my_booking_tour('${data_list[i].timeCheckin}','${data_list[i].createdTime}')">Xóa</button>

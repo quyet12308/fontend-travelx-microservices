@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         let tourist_destination_location_list = data_response.tourist_destination_location_list
         let number_of_travel_days_list = data_response.number_of_travel_days_list
         let hotel_info_list = data_response.hotel_info_list
+        
                      
         console.log(tourist_destination_name_list)
         let html_text = ""
