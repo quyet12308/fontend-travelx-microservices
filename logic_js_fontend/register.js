@@ -70,11 +70,11 @@ document.addEventListener('DOMContentLoaded', function() {
           window.location.href = "/pages/login.html"
         }
         else{
-          alert("Bạn chưa đăng ký thành công")
+          alert(a.message)
         }
       }
       else{
-        alert(a.message)
+        alert("Bạn chưa đăng ký thành công")
       }
     });
 })
